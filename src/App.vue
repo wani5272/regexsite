@@ -1,10 +1,12 @@
-<script setup></script>
+<script setup>
+import RegexHome from "./components/RegexHome.vue";
+</script>
 
 <template>
   <header></header>
 
   <main>
-    <TheWelcome />
+    <RegexHome />
   </main>
 </template>
 

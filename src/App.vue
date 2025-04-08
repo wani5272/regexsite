@@ -1,5 +1,5 @@
 <script setup>
-import RegexHome from "./components/RegexHome.vue";
+import RegexHome from "./components/header.vue";
 </script>
 
 <template>

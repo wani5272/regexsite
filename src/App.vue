@@ -101,56 +101,59 @@ export default {
           example: "Wor.",
         },
         {
-          title: { de: "Wortsuche", en: "Word Matching" },
-          description: {
-            de: 'Nach "Word" suchen',
-            en: 'Search for "Word"',
+          title: {
+            de: "Nach einem Wort in mehreren Variationen suchen",
+            en: "Matching multiple letters",
           },
-          example: "Word",
+          description: {
+            de: 'Nur nach "Wora" und "Worb" suchen',
+            en: 'Search only for "Wora" and "Worb"',
+          },
+          example: "Wor[ab]",
         },
         {
           title: {
-            de: "Wort am Anfang der Zeile",
-            en: "Match the beginning of a line",
+            de: "Repetition von Matches (0 oder mehr mal)",
+            en: "repetition of matches (0 or more times)",
           },
           description: {
-            de: 'Nach der Zeile, die mit "Word" beginnt, suchen',
-            en: 'Search for the line beginning with "Word"',
+            de: 'Nach Wort suchen, das mit "Wor" beginnt und danach nur noch aus 0 oder mehreren a oder b besteht (z.B Wor, Woraaaa Worabab, Worbaba, Woraabb, Worbbaa), suchen',
+            en: 'Search for a word which begins with "Wor" and continues only with 0 or more  a or b (ex. Wor, Woraaaa, Worbbbb, Worabab, Worbaba, Woraabb, Worbbaa)',
           },
-          example: "^Word",
+          example: "Wor[ab]*",
         },
         {
           title: {
-            de: "Wort am Ende der Zeile",
-            en: "Match the end of a line",
+            de: "Repetition von Matches (1 oder mehr mal)",
+            en: "repetition of matches (1 or more times)",
           },
           description: {
-            de: 'Nach der Zeile, die mit "Word" endet, suchen',
-            en: 'Search for the line ending with "Word"',
+            de: 'Nach Wort suchen, das mit "Wor" beginnt und danach nur noch aus 1 oder mehreren a oder b besteht (z.B Woraaaa Worabab, Worbaba, Woraabb, Worbbaa), suchen',
+            en: 'Search for a word which begins with "Wor" and continues only with 1 or more  a or b (ex. Woraaaa, Worbbbb, Worabab, Worbaba, Woraabb, Worbbaa)',
           },
-          example: "Word$",
+          example: "Wor[ab]+",
         },
         {
           title: {
-            de: "Zeichen als Zeichen und nicht als regexveränderung nutzen",
-            en: "Escaping characters",
+            de: "Inversion",
+            en: "inversion",
           },
           description: {
-            de: 'Nach "Word$" suchen',
-            en: 'Search for "Word$"',
+            de: "Nach Zeile suchen, das NICHT a oder b beinhaltet, suchen",
+            en: "Search for a Line which does NOT include a or b",
           },
-          example: "Word\\$",
+          example: "[^ab]",
         },
         {
           title: {
-            de: "Wildcards",
-            en: "wildcards",
+            de: "Mehrere Begriffe gleichzeitig suchen",
+            en: "Search multiple words at the same time",
           },
           description: {
-            de: 'Nach "Wora", "Worb", "Worc" usw. , "Wor1", "Wor2", "Wor3" usw suchen',
-            en: 'Search for "Wora", "Worb", "Worc" etc. , "Wor1", "Wor2", "Wor3" etc',
+            de: 'Sowohl nach "Word" wie auch nach "asdf" suchen',
+            en: 'Search for "Word" and for "asdf" at the same time',
           },
-          example: "Wor.",
+          example: "(Word|asdf)",
         },
       ],
     };

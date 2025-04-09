@@ -1,40 +1,54 @@
-<script setup>
-import RegexHome from "./components/header.vue";
-</script>
-
 <template>
-  <header></header>
-
-  <main>
-    <RegexHome />
-  </main>
+  <div id="app" :style="{ backgroundColor: backgroundColor }">
+    <header>
+      <h1>{{ currentLanguage === "de" ? "Regex Regeln" : "Regex Rules" }}</h1>
+      <button @click="toggleLanguage">
+        {{ currentLanguage === "de" ? "Englisch" : "Deutsch" }}
+      </button>
+    </header>
+    <main>
+      <ul>
+        <li v-for="(rule, index) in rules" :key="index">
+          <h2>{{ rule.title[currentLanguage] }}</h2>
+          <p>{{ rule.description[currentLanguage] }}</p>
+          <code>{{ rule.example }}</code>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p>
+        {{
+          currentLanguage === "de"
+            ? "Informationen von: "
+            : "Informations from: "
+        }}
+        <a href="https://man.openbsd.org/re_format.7">Manpage zu Regex</a>
+      </p>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<script>
+export default {
+  data() {
+    return {
+      currentLanguage: "de",
+      rules: [
+        {
+          title: { de: "Regel 1", en: "Rule 1" },
+          description: {
+            de: "Beschreibung für Regel 1",
+            en: "Description for Rule 1",
+          },
+          example: "Beispiel für Regel 1",
+        },
+      ],
+    };
+  },
+  methods: {
+    toggleLanguage() {
+      this.currentLanguage = this.currentLanguage === "de" ? "en" : "de";
+    },
+  },
+};
+</script>

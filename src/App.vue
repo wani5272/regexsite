@@ -78,6 +78,80 @@ export default {
           },
           example: "Word$",
         },
+        {
+          title: {
+            de: "Zeichen als Zeichen und nicht als regexveränderung nutzen",
+            en: "Escaping characters",
+          },
+          description: {
+            de: 'Nach "Word$" suchen',
+            en: 'Search for "Word$"',
+          },
+          example: "Word\\$",
+        },
+        {
+          title: {
+            de: "Wildcards",
+            en: "wildcards",
+          },
+          description: {
+            de: 'Nach "Wora", "Worb", "Worc" usw. , "Wor1", "Wor2", "Wor3" usw suchen',
+            en: 'Search for "Wora", "Worb", "Worc" etc. , "Wor1", "Wor2", "Wor3" etc',
+          },
+          example: "Wor.",
+        },
+        {
+          title: { de: "Wortsuche", en: "Word Matching" },
+          description: {
+            de: 'Nach "Word" suchen',
+            en: 'Search for "Word"',
+          },
+          example: "Word",
+        },
+        {
+          title: {
+            de: "Wort am Anfang der Zeile",
+            en: "Match the beginning of a line",
+          },
+          description: {
+            de: 'Nach der Zeile, die mit "Word" beginnt, suchen',
+            en: 'Search for the line beginning with "Word"',
+          },
+          example: "^Word",
+        },
+        {
+          title: {
+            de: "Wort am Ende der Zeile",
+            en: "Match the end of a line",
+          },
+          description: {
+            de: 'Nach der Zeile, die mit "Word" endet, suchen',
+            en: 'Search for the line ending with "Word"',
+          },
+          example: "Word$",
+        },
+        {
+          title: {
+            de: "Zeichen als Zeichen und nicht als regexveränderung nutzen",
+            en: "Escaping characters",
+          },
+          description: {
+            de: 'Nach "Word$" suchen',
+            en: 'Search for "Word$"',
+          },
+          example: "Word\\$",
+        },
+        {
+          title: {
+            de: "Wildcards",
+            en: "wildcards",
+          },
+          description: {
+            de: 'Nach "Wora", "Worb", "Worc" usw. , "Wor1", "Wor2", "Wor3" usw suchen',
+            en: 'Search for "Wora", "Worb", "Worc" etc. , "Wor1", "Wor2", "Wor3" etc',
+          },
+          example: "Wor.",
+        },
       ],
     };
   },
